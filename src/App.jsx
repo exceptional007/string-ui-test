@@ -3,7 +3,7 @@ import ProductList from "./components/ProductList";
 function App() {
   return (
     <div className="container">
-      <h1>Product List</h1>
+      <h1>Akshhat String UI Test</h1>
       <ProductList />
     </div>
   );

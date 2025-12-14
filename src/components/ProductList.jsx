@@ -8,12 +8,16 @@ function ProductList() {
   const filteredProducts =
     category === "All"
       ? products
-      : products.filter(product => product.category === category);
+      : products.filter((product) => product.category === category);
 
   return (
     <>
-      <select onChange={(e) => setCategory(e.target.value)}>
-        <option value="All">All</option>
+      <select
+        className="filter-select"
+        onChange={(e) => setCategory(e.target.value)}
+        value={category}
+      >
+        <option value="All">All Categories</option>
         <option value="Electronics">Electronics</option>
         <option value="Clothing">Clothing</option>
         <option value="Grocery">Grocery</option>
@@ -22,8 +26,17 @@ function ProductList() {
 
       <div className="grid">
         {filteredProducts.map((product, index) => (
-          <ProductCard key={index} product={product} />
+          <ProductCard
+            key={product.id || index}
+            product={product}
+            index={index}
+          />
         ))}
+        {filteredProducts.length === 0 && (
+          <p style={{ gridColumn: "1 / -1", color: "#666" }}>
+            No products found in this category.
+          </p>
+        )}
       </div>
     </>
   );
