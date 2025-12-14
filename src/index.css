@@ -1,5 +1,11 @@
+/* @import "tailwindcss"; */
+
+
+
+
 body {
   font-family: Arial, sans-serif;
+  background: radial-gradient(circle 500px at 50% 100px, rgba(236,72,153,0.4), transparent),
 }
 
 .container {
